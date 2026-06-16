@@ -1,0 +1,132 @@
+info:
+  name: search-users-query
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BACKEND_BASE_URL}}/users/search?q=santoso"
+  params:
+    - name: q
+      value: santoso
+      type: query
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJmNDRmY2RjLTJmNjMtNDNmMS1iMmE1LTQxZGMxYTY3MDViZCIsImVtYWlsIjpudWxsLCJlbXBsb3llZV9pZCI6IkRVTU1ZLVRFU1QwMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzgxNTczMDc0LCJleHAiOjE3ODE2NTk0NzR9.QkgQsV_yJ9qx_ekKzmEvmJZvQF_gkphGQi6DDjqkV0c
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: search-user-query--res
+    request:
+      url: "{{BACKEND_BASE_URL}}/users/search?q=santoso"
+      method: GET
+      params:
+        - name: q
+          value: santoso
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: content-security-policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: strict-transport-security
+          value: max-age=31536000; includeSubDomains
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: x-xss-protection
+          value: "0"
+        - name: vary
+          value: Origin
+        - name: access-control-allow-credentials
+          value: "true"
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "1496"
+        - name: etag
+          value: W/"5d8-1DWug8jCxOvzC4i4o65xHomYxcs"
+        - name: date
+          value: Tue, 16 Jun 2026 04:17:01 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Hasil pencarian pengguna berhasil diambil",
+            "data": [
+              {
+                "id": "8c8d1a52-cf60-4263-8e24-efb969db601e",
+                "employee_id": "DUMMY-006",
+                "name": "Ali Santoso Akundummy",
+                "email": "pic.satu@spid.com",
+                "role": "PIC",
+                "phone": "",
+                "position": "Staff",
+                "default_location_id": "8a4a34c3-0685-4865-8711-cf2f01e4db54",
+                "defaultLocation": {
+                  "id": "8a4a34c3-0685-4865-8711-cf2f01e4db54",
+                  "name": "PABRIK SENTUL",
+                  "code": "FAC-STL",
+                  "address": "Leuwinutug, Jl. Olympic Raya No.Kav. H-3, Kawasan Industri, Sentul, Kec. Citeureup, Kabupaten Bogor, Jawa Barat 16810"
+                }
+              },
+              {
+                "id": "047b83f0-d975-4749-a30e-46b768b3f9d7",
+                "employee_id": "DUMMY-002",
+                "name": "Budi Santoso Akundummy",
+                "email": "user.satu@spid.com",
+                "role": "USER",
+                "phone": "",
+                "position": "Staff",
+                "default_location_id": "8a4a34c3-0685-4865-8711-cf2f01e4db54",
+                "defaultLocation": {
+                  "id": "8a4a34c3-0685-4865-8711-cf2f01e4db54",
+                  "name": "PABRIK SENTUL",
+                  "code": "FAC-STL",
+                  "address": "Leuwinutug, Jl. Olympic Raya No.Kav. H-3, Kawasan Industri, Sentul, Kec. Citeureup, Kabupaten Bogor, Jawa Barat 16810"
+                }
+              },
+              {
+                "id": "21238873-f9aa-4236-a5d9-046b1dd07111",
+                "employee_id": "DUMMY-010",
+                "name": "Edo Santoso Akundummy",
+                "email": "driver.satu@spid.com",
+                "role": "DRIVER",
+                "phone": "",
+                "position": "Driver",
+                "default_location_id": "8a4a34c3-0685-4865-8711-cf2f01e4db54",
+                "defaultLocation": {
+                  "id": "8a4a34c3-0685-4865-8711-cf2f01e4db54",
+                  "name": "PABRIK SENTUL",
+                  "code": "FAC-STL",
+                  "address": "Leuwinutug, Jl. Olympic Raya No.Kav. H-3, Kawasan Industri, Sentul, Kec. Citeureup, Kabupaten Bogor, Jawa Barat 16810"
+                }
+              }
+            ]
+          }

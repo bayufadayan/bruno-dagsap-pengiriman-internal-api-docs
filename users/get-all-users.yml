@@ -1,0 +1,214 @@
+info:
+  name: get-all-users
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{BACKEND_BASE_URL}}/users"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkNTNlNTk0LTg4ODctNDVmNi05NWJkLTZkMWU4MmIyZTliZSIsImVtYWlsIjoiYWRtaW5Ac3BpZC5jb20iLCJlbXBsb3llZV9pZCI6IkRVTU1ZLTAwMSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc4MTU3NDcxOCwiZXhwIjoxNzgxNjYxMTE4fQ.ZwnLqGPAbJ9vItWaleihT8ZIGR25q8tUlVp1XtsV9qk
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: get-all-users--res
+    request:
+      url: "{{BACKEND_BASE_URL}}/users"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: content-security-policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: strict-transport-security
+          value: max-age=31536000; includeSubDomains
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: x-xss-protection
+          value: "0"
+        - name: vary
+          value: Origin
+        - name: access-control-allow-credentials
+          value: "true"
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "3485"
+        - name: etag
+          value: W/"d9d-gSVRTwwWNsRqB4SEDMIEXFtRSB4"
+        - name: date
+          value: Tue, 16 Jun 2026 04:43:45 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Daftar pengguna berhasil diambil",
+            "data": {
+              "rows": [
+                {
+                  "id": "bf44fcdc-2f63-43f1-b2a5-41dc1a6705bd",
+                  "employee_id": "DUMMY-TEST01",
+                  "name": "Reza Lahardian",
+                  "email": null,
+                  "role": "USER",
+                  "phone": "",
+                  "position": "Staff",
+                  "default_location_id": "b7278fc3-c3b9-42f4-ae07-4ac5ac68bf2f",
+                  "is_active": true,
+                  "created_at": "2026-06-16T01:24:12.000Z",
+                  "updated_at": "2026-06-16T04:10:36.000Z"
+                },
+                {
+                  "id": "047b83f0-d975-4749-a30e-46b768b3f9d7",
+                  "employee_id": "DUMMY-002",
+                  "name": "Budi Santoso Akundummy",
+                  "email": "user.satu@spid.com",
+                  "role": "USER",
+                  "phone": "",
+                  "position": "Staff",
+                  "default_location_id": "8a4a34c3-0685-4865-8711-cf2f01e4db54",
+                  "is_active": true,
+                  "created_at": "2026-06-15T07:51:53.000Z",
+                  "updated_at": "2026-06-15T07:51:53.000Z"
+                },
+                {
+                  "id": "16f32ffa-1e42-40f5-b3a7-257f0a03dc3f",
+                  "employee_id": "DUMMY-013",
+                  "name": "Sari Kurniawan Akundummy",
+                  "email": "driver.empat@spid.com",
+                  "role": "DRIVER",
+                  "phone": "",
+                  "position": "Driver",
+                  "default_location_id": "158c53ef-8f68-458b-82bb-a4efbfaf3ab1",
+                  "is_active": true,
+                  "created_at": "2026-06-15T07:51:53.000Z",
+                  "updated_at": "2026-06-15T07:51:53.000Z"
+                },
+                {
+                  "id": "21238873-f9aa-4236-a5d9-046b1dd07111",
+                  "employee_id": "DUMMY-010",
+                  "name": "Edo Santoso Akundummy",
+                  "email": "driver.satu@spid.com",
+                  "role": "DRIVER",
+                  "phone": "",
+                  "position": "Driver",
+                  "default_location_id": "8a4a34c3-0685-4865-8711-cf2f01e4db54",
+                  "is_active": true,
+                  "created_at": "2026-06-15T07:51:53.000Z",
+                  "updated_at": "2026-06-15T07:51:53.000Z"
+                },
+                {
+                  "id": "25af8581-500f-47d4-8fe8-2f367b4c4a73",
+                  "employee_id": "DUMMY-009",
+                  "name": "Rudi Kurniawan Akundummy",
+                  "email": "pic.empat@spid.com",
+                  "role": "PIC",
+                  "phone": "",
+                  "position": "Staff",
+                  "default_location_id": "158c53ef-8f68-458b-82bb-a4efbfaf3ab1",
+                  "is_active": true,
+                  "created_at": "2026-06-15T07:51:53.000Z",
+                  "updated_at": "2026-06-15T07:51:53.000Z"
+                },
+                {
+                  "id": "2b97b292-1f4c-4c71-874f-3287f0810d85",
+                  "employee_id": "DUMMY-011",
+                  "name": "Dika Wijaya Akundummy",
+                  "email": "driver.dua@spid.com",
+                  "role": "DRIVER",
+                  "phone": "",
+                  "position": "Driver",
+                  "default_location_id": "19161644-017a-4fdd-9fa6-c9c7329e58bc",
+                  "is_active": true,
+                  "created_at": "2026-06-15T07:51:53.000Z",
+                  "updated_at": "2026-06-15T07:51:53.000Z"
+                },
+                {
+                  "id": "39bb64c6-8a14-40e8-af6c-204b40855deb",
+                  "employee_id": "DUMMY-008",
+                  "name": "Tono Kusuma Akundummy",
+                  "email": "pic.tiga@spid.com",
+                  "role": "PIC",
+                  "phone": "",
+                  "position": "Staff",
+                  "default_location_id": "eefc98fc-e0cd-463b-b4cf-cd9157766ff4",
+                  "is_active": true,
+                  "created_at": "2026-06-15T07:51:53.000Z",
+                  "updated_at": "2026-06-16T01:26:25.000Z"
+                },
+                {
+                  "id": "6e4148ba-e137-4f34-92ba-bd4038a4362a",
+                  "employee_id": "DUMMY-005",
+                  "name": "Hendra Kurniawan Akundummy",
+                  "email": "user.empat@spid.com",
+                  "role": "USER",
+                  "phone": "",
+                  "position": "Staff",
+                  "default_location_id": "158c53ef-8f68-458b-82bb-a4efbfaf3ab1",
+                  "is_active": true,
+                  "created_at": "2026-06-15T07:51:53.000Z",
+                  "updated_at": "2026-06-15T07:51:53.000Z"
+                },
+                {
+                  "id": "8c8d1a52-cf60-4263-8e24-efb969db601e",
+                  "employee_id": "DUMMY-006",
+                  "name": "Ali Santoso Akundummy",
+                  "email": "pic.satu@spid.com",
+                  "role": "PIC",
+                  "phone": "",
+                  "position": "Staff",
+                  "default_location_id": "8a4a34c3-0685-4865-8711-cf2f01e4db54",
+                  "is_active": true,
+                  "created_at": "2026-06-15T07:51:53.000Z",
+                  "updated_at": "2026-06-15T07:51:53.000Z"
+                },
+                {
+                  "id": "99b4aa79-55e5-4610-817f-9606794b7425",
+                  "employee_id": "DUMMY-003",
+                  "name": "Siti Wijaya Akundummy",
+                  "email": "user.dua@spid.com",
+                  "role": "USER",
+                  "phone": "",
+                  "position": "Staff",
+                  "default_location_id": "19161644-017a-4fdd-9fa6-c9c7329e58bc",
+                  "is_active": true,
+                  "created_at": "2026-06-15T07:51:53.000Z",
+                  "updated_at": "2026-06-15T07:51:53.000Z"
+                }
+              ],
+              "pagination": {
+                "page": 1,
+                "limit": 10,
+                "totalData": 14,
+                "totalPage": 2
+              }
+            }
+          }

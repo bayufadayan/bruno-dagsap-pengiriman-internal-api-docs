@@ -1,21 +1,12 @@
 info:
-  name: change-password
+  name: base-url
   type: http
   seq: 4
 
 http:
-  method: POST
-  url: "{{BACKEND_BASE_URL}}/auth/change-password"
-  body:
-    type: json
-    data: |-
-      {
-        "oldPassword": "123456",
-        "newPassword": "12345678"
-      }
-  auth:
-    type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJmNDRmY2RjLTJmNjMtNDNmMS1iMmE1LTQxZGMxYTY3MDViZCIsImVtYWlsIjpudWxsLCJlbXBsb3llZV9pZCI6IkRVTU1ZLVRFU1QwMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzgxNTczMDc0LCJleHAiOjE3ODE2NTk0NzR9.QkgQsV_yJ9qx_ekKzmEvmJZvQF_gkphGQi6DDjqkV0c
+  method: GET
+  url: "{{BACKEND_BASE_URL}}"
+  auth: inherit
 
 settings:
   encodeUrl: true
@@ -24,17 +15,10 @@ settings:
   maxRedirects: 5
 
 examples:
-  - name: change-password--res
+  - name: base-url--res
     request:
-      url: "{{BACKEND_BASE_URL}}/auth/change-password"
-      method: POST
-      body:
-        type: json
-        data: |-
-          {
-            "oldPassword": "123456",
-            "newPassword": "12345678"
-          }
+      url: "{{BACKEND_BASE_URL}}"
+      method: GET
     response:
       status: 200
       statusText: OK
@@ -67,22 +51,14 @@ examples:
           value: Origin
         - name: access-control-allow-credentials
           value: "true"
-        - name: ratelimit-policy
-          value: 100;w=900
-        - name: ratelimit-limit
-          value: "100"
-        - name: ratelimit-remaining
-          value: "93"
-        - name: ratelimit-reset
-          value: "738"
         - name: content-type
           value: application/json; charset=utf-8
         - name: content-length
-          value: "65"
+          value: "93"
         - name: etag
-          value: W/"41-kF0+8zQlOvXpBkvxoIORRpyNxNw"
+          value: W/"5d-BZo9lkS78vCwpncpDbYZ7vnNZa4"
         - name: date
-          value: Tue, 16 Jun 2026 01:24:52 GMT
+          value: Tue, 16 Jun 2026 01:21:35 GMT
         - name: connection
           value: keep-alive
         - name: keep-alive
@@ -92,6 +68,6 @@ examples:
         data: |-
           {
             "success": true,
-            "message": "Password berhasil diubah",
+            "message": "Welcome to Sistem Pengiriman Internal Dagsap Backend",
             "data": null
           }
