@@ -1,0 +1,30 @@
+info:
+  name: register
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BACKEND_BASE_URL}}/auth/register"
+  body:
+    type: json
+    data: |-
+      {
+        "employee_id": "DUMMY-TEST01",
+        "name": "Reza Rahadian",
+      //   "email": "reza@lahardian.com",
+        "password": "123456",
+        "role": "USER",
+        "phone": "",
+        "position": "Staff",
+        "default_location_id": "b7278fc3-c3b9-42f4-ae07-4ac5ac68bf2f"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkNTNlNTk0LTg4ODctNDVmNi05NWJkLTZkMWU4MmIyZTliZSIsImVtYWlsIjoiYWRtaW5Ac3BpZC5jb20iLCJlbXBsb3llZV9pZCI6IkRVTU1ZLTAwMSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc4MTUxMTYyOCwiZXhwIjoxNzgxNTk4MDI4fQ.W0LpzFI6BAFi_TaB-sJ_PGdvUbyMC9bpTdpEQTD35ng
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,22 @@
+info:
+  name: refresh-token
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{BACKEND_BASE_URL}}/auth/refresh"
+  headers:
+    - name: Cookie
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkNTNlNTk0LTg4ODctNDVmNi05NWJkLTZkMWU4MmIyZTliZSIsImVtYWlsIjoiYWRtaW5Ac3BpZC5jb20iLCJlbXBsb3llZV9pZCI6IkRVTU1ZLTAwMSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc4MTUxMTYyOCwiZXhwIjoxNzgyMTE2NDI4fQ.5Ni0ETweyha06r-nc4EMV_ANTa3L7sY31zi49PjOzeQ
+  params:
+    - name: ""
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
