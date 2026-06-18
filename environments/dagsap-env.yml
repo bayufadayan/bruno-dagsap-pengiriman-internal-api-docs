@@ -2,3 +2,13 @@ name: dagsap-env
 variables:
   - name: BACKEND_BASE_URL
     value: http://localhost:3000/api
+  - secret: true
+    name: TOKEN_SUPER_ADMIN
+  - secret: true
+    name: TOKEN_USER
+  - secret: true
+    name: TOKEN_DRIVER
+  - secret: true
+    name: TOKEN_PIC
+  - name: DUMMY_IMG_URL
+    value: '"http://localhost:3000/uploads/test-image-3.png"'

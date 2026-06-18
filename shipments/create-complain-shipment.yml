@@ -1,0 +1,125 @@
+info:
+  name: create-complain-shipment
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{BACKEND_BASE_URL}}/shipments/:id/complaints"
+  params:
+    - name: id
+      value: 74ee6d80-192b-4829-ba70-a5a33ae6c331
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "description": "Barang belum saya terima, padahal status sudah sampai."
+      }
+  auth:
+    type: bearer
+    token: "{{TOKEN_USER}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: create-complaint-shipment--res
+    request:
+      url: "{{BACKEND_BASE_URL}}/shipments/:id/complaints"
+      method: POST
+      params:
+        - name: id
+          value: 74ee6d80-192b-4829-ba70-a5a33ae6c331
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "description": "Barang belum saya terima, padahal status sudah sampai."
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: content-security-policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: strict-transport-security
+          value: max-age=31536000; includeSubDomains
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: x-xss-protection
+          value: "0"
+        - name: vary
+          value: Origin
+        - name: access-control-allow-credentials
+          value: "true"
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "885"
+        - name: etag
+          value: W/"375-OUppw7PGXfZOaqYhWL0EEDe2JJc"
+        - name: date
+          value: Wed, 17 Jun 2026 16:48:44 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Komplain berhasil dibuat",
+            "data": {
+              "id": "6c90d8ce-5ea2-4a3b-bc5b-15baad0c1494",
+              "shipment_id": "74ee6d80-192b-4829-ba70-a5a33ae6c331",
+              "reported_by_id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+              "assigned_to_id": null,
+              "description": "Barang belum saya terima, padahal status sudah sampai.",
+              "status": "open",
+              "resolution_note": null,
+              "resolved_at": null,
+              "closed_at": null,
+              "created_at": "2026-06-17T16:48:44.000Z",
+              "updated_at": "2026-06-17T16:48:44.000Z",
+              "shipment": {
+                "id": "74ee6d80-192b-4829-ba70-a5a33ae6c331",
+                "code": "SHP-20260617-003",
+                "sender_name": "Reza",
+                "recipient_name": "PIC Sentul",
+                "status": "pending"
+              },
+              "reportedBy": {
+                "id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+                "employee_id": "DUMMY-002",
+                "name": "Budi Santoso Akundummy",
+                "email": "user.satu@spid.com",
+                "role": "user",
+                "phone": "",
+                "position": "Staff",
+                "default_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9"
+              },
+              "assignedTo": null
+            }
+          }

@@ -1,0 +1,357 @@
+info:
+  name: get-return-shipment-child
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{BACKEND_BASE_URL}}/shipments/:id/returns"
+  params:
+    - name: id
+      value: 30121188-f88b-414e-9b7a-c6dce44466ed
+      type: path
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{TOKEN_USER}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: create-return-shipment--res
+    request:
+      url: "{{BACKEND_BASE_URL}}/shipments/:id/create-return"
+      method: POST
+      params:
+        - name: id
+          value: 30121188-f88b-414e-9b7a-c6dce44466ed
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "sender_name": "Reza",
+            "sender_phone": "08123456789",
+            "recipient_name": "PIC Sentul",
+            "recipient_phone": "08987654321",
+            "notes": "Pengembalian laptop setelah digunakan"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: content-security-policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: strict-transport-security
+          value: max-age=31536000; includeSubDomains
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: x-xss-protection
+          value: "0"
+        - name: vary
+          value: Origin
+        - name: access-control-allow-credentials
+          value: "true"
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "3912"
+        - name: etag
+          value: W/"f48-4ingR1t4DJ+kdxS1loOBfVKh/a8"
+        - name: date
+          value: Wed, 17 Jun 2026 16:28:28 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Return shipment berhasil dibuat",
+            "data": {
+              "id": "74ee6d80-192b-4829-ba70-a5a33ae6c331",
+              "code": "SHP-20260617-003",
+              "created_by_id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+              "sender_id": null,
+              "sender_name": "Reza",
+              "sender_phone": "08123456789",
+              "recipient_id": null,
+              "recipient_name": "PIC Sentul",
+              "recipient_phone": "08987654321",
+              "origin_location_id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+              "destination_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+              "current_location_id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+              "current_box_id": null,
+              "current_driver_trip_id": null,
+              "status": "pending",
+              "is_round_trip": false,
+              "parent_shipment_id": "30121188-f88b-414e-9b7a-c6dce44466ed",
+              "img_qrcode_url": "http://localhost:3000/uploads/qrcode-SHP-20260617-003.png",
+              "confirmed_at": null,
+              "completed_at": null,
+              "cancelled_at": null,
+              "notes": "Pengembalian laptop setelah digunakan",
+              "created_at": "2026-06-17T16:28:28.000Z",
+              "updated_at": "2026-06-17T16:28:28.000Z",
+              "createdBy": {
+                "id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+                "employee_id": "DUMMY-002",
+                "name": "Budi Santoso Akundummy",
+                "email": "user.satu@spid.com",
+                "role": "user",
+                "phone": "",
+                "position": "Staff",
+                "default_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9"
+              },
+              "sender": null,
+              "recipient": null,
+              "originLocation": {
+                "id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                "name": "GRAND WIJAYA",
+                "code": "OFC-GWJ",
+                "type": "office",
+                "address": "Grand Wijaya Center, Jl. Wijaya II Blok F 83 B, RT.6/RW.1, Pulo, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+                "phone": null,
+                "is_active": true
+              },
+              "destinationLocation": {
+                "id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                "name": "PABRIK SENTUL",
+                "code": "FAC-STL",
+                "type": "factory",
+                "address": "Leuwinutug, Jl. Olympic Raya No.Kav. H-3, Kawasan Industri, Sentul, Kec. Citeureup, Kabupaten Bogor, Jawa Barat 16810",
+                "phone": null,
+                "is_active": true
+              },
+              "currentLocation": {
+                "id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                "name": "GRAND WIJAYA",
+                "code": "OFC-GWJ",
+                "type": "office",
+                "address": "Grand Wijaya Center, Jl. Wijaya II Blok F 83 B, RT.6/RW.1, Pulo, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+                "phone": null,
+                "is_active": true
+              },
+              "currentBox": null,
+              "currentDriverTrip": null,
+              "parentShipment": {
+                "id": "30121188-f88b-414e-9b7a-c6dce44466ed",
+                "code": "SHP-20260617-002",
+                "status": "completed",
+                "sender_name": "Budi Santoso",
+                "recipient_name": "Siti Wijaya"
+              },
+              "returnShipments": [],
+              "items": [],
+              "trackingLogs": [
+                {
+                  "id": "6b664d67-1294-4671-97e0-41d2ca8257c9",
+                  "shipment_id": "74ee6d80-192b-4829-ba70-a5a33ae6c331",
+                  "box_id": null,
+                  "driver_trip_id": null,
+                  "location_id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                  "from_location_id": null,
+                  "to_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                  "actor_id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+                  "event_type": "return_shipment_created",
+                  "shipment_status": "pending",
+                  "notes": "Pengembalian laptop setelah digunakan",
+                  "metadata": {
+                    "is_round_trip_return": true,
+                    "parent_shipment_code": "SHP-20260617-002",
+                    "return_shipment_code": "SHP-20260617-003"
+                  },
+                  "created_at": "2026-06-17T16:28:28.000Z",
+                  "updated_at": "2026-06-17T16:28:28.000Z",
+                  "location": {
+                    "id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                    "name": "GRAND WIJAYA",
+                    "code": "OFC-GWJ",
+                    "type": "office",
+                    "address": "Grand Wijaya Center, Jl. Wijaya II Blok F 83 B, RT.6/RW.1, Pulo, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+                    "phone": null,
+                    "is_active": true
+                  },
+                  "fromLocation": null,
+                  "toLocation": {
+                    "id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                    "name": "PABRIK SENTUL",
+                    "code": "FAC-STL",
+                    "type": "factory",
+                    "address": "Leuwinutug, Jl. Olympic Raya No.Kav. H-3, Kawasan Industri, Sentul, Kec. Citeureup, Kabupaten Bogor, Jawa Barat 16810",
+                    "phone": null,
+                    "is_active": true
+                  },
+                  "box": null,
+                  "driverTrip": null,
+                  "actor": {
+                    "id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+                    "employee_id": "DUMMY-002",
+                    "name": "Budi Santoso Akundummy",
+                    "email": "user.satu@spid.com",
+                    "role": "user",
+                    "phone": "",
+                    "position": "Staff",
+                    "default_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9"
+                  }
+                }
+              ],
+              "deliveryProofs": [],
+              "complaints": []
+            }
+          }
+  - name: get-return-shipment-child--res
+    request:
+      url: "{{BACKEND_BASE_URL}}/shipments/:id/returns"
+      method: GET
+      params:
+        - name: id
+          value: 30121188-f88b-414e-9b7a-c6dce44466ed
+          type: path
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: content-security-policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: strict-transport-security
+          value: max-age=31536000; includeSubDomains
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: x-xss-protection
+          value: "0"
+        - name: vary
+          value: Origin
+        - name: access-control-allow-credentials
+          value: "true"
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "2165"
+        - name: etag
+          value: W/"875-ovXX03Rg7sf0uKdlHjRtxikYsTQ"
+        - name: date
+          value: Wed, 17 Jun 2026 16:29:56 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Daftar return shipment berhasil diambil",
+            "data": [
+              {
+                "id": "74ee6d80-192b-4829-ba70-a5a33ae6c331",
+                "code": "SHP-20260617-003",
+                "created_by_id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+                "sender_id": null,
+                "sender_name": "Reza",
+                "sender_phone": "08123456789",
+                "recipient_id": null,
+                "recipient_name": "PIC Sentul",
+                "recipient_phone": "08987654321",
+                "origin_location_id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                "destination_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                "current_location_id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                "current_box_id": null,
+                "current_driver_trip_id": null,
+                "status": "pending",
+                "is_round_trip": false,
+                "parent_shipment_id": "30121188-f88b-414e-9b7a-c6dce44466ed",
+                "img_qrcode_url": "http://localhost:3000/uploads/qrcode-SHP-20260617-003.png",
+                "confirmed_at": null,
+                "completed_at": null,
+                "cancelled_at": null,
+                "notes": "Pengembalian laptop setelah digunakan",
+                "created_at": "2026-06-17T16:28:28.000Z",
+                "updated_at": "2026-06-17T16:28:28.000Z",
+                "createdBy": {
+                  "id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+                  "employee_id": "DUMMY-002",
+                  "name": "Budi Santoso Akundummy",
+                  "email": "user.satu@spid.com",
+                  "role": "user",
+                  "phone": "",
+                  "position": "Staff",
+                  "default_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9"
+                },
+                "sender": null,
+                "recipient": null,
+                "originLocation": {
+                  "id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                  "name": "GRAND WIJAYA",
+                  "code": "OFC-GWJ",
+                  "type": "office",
+                  "address": "Grand Wijaya Center, Jl. Wijaya II Blok F 83 B, RT.6/RW.1, Pulo, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+                  "phone": null,
+                  "is_active": true
+                },
+                "destinationLocation": {
+                  "id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                  "name": "PABRIK SENTUL",
+                  "code": "FAC-STL",
+                  "type": "factory",
+                  "address": "Leuwinutug, Jl. Olympic Raya No.Kav. H-3, Kawasan Industri, Sentul, Kec. Citeureup, Kabupaten Bogor, Jawa Barat 16810",
+                  "phone": null,
+                  "is_active": true
+                },
+                "currentLocation": {
+                  "id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                  "name": "GRAND WIJAYA",
+                  "code": "OFC-GWJ",
+                  "type": "office",
+                  "address": "Grand Wijaya Center, Jl. Wijaya II Blok F 83 B, RT.6/RW.1, Pulo, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+                  "phone": null,
+                  "is_active": true
+                },
+                "currentBox": null,
+                "currentDriverTrip": null
+              }
+            ]
+          }

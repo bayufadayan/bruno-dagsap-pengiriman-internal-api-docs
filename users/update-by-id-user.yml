@@ -8,22 +8,22 @@ http:
   url: "{{BACKEND_BASE_URL}}/users/:id"
   params:
     - name: id
-      value: bf44fcdc-2f63-43f1-b2a5-41dc1a6705bd
+      value: 047b83f0-d975-4749-a30e-46b768b3f9d7
       type: path
   body:
     type: json
     data: |-
       {
-        "employee_id":"DUMMY-UPT01",
-        "name":"Aldi Taheer",
-        "email":"aldis.burger@dagsap.com"
+        "employee_id":"DUMMY-UPT02",
+        "name":"Budi Santoso Akundaummy"
+      //   "email":"aldis.burger@dagsap.com"
       //   "role":"DRIVER"
       //   "phone":"",
       //   "default_location_id":""
       }
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkNTNlNTk0LTg4ODctNDVmNi05NWJkLTZkMWU4MmIyZTliZSIsImVtYWlsIjoiYWRtaW5Ac3BpZC5jb20iLCJlbXBsb3llZV9pZCI6IkRVTU1ZLTAwMSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc4MTU3NDcxOCwiZXhwIjoxNzgxNjYxMTE4fQ.ZwnLqGPAbJ9vItWaleihT8ZIGR25q8tUlVp1XtsV9qk
+    token: "{{TOKEN_SUPER_ADMIN}}"
 
 settings:
   encodeUrl: true

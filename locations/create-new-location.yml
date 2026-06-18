@@ -19,7 +19,7 @@ http:
       }
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkNTNlNTk0LTg4ODctNDVmNi05NWJkLTZkMWU4MmIyZTliZSIsImVtYWlsIjoiYWRtaW5Ac3BpZC5jb20iLCJlbXBsb3llZV9pZCI6IkRVTU1ZLTAwMSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc4MTU3NDcxOCwiZXhwIjoxNzgxNjYxMTE4fQ.ZwnLqGPAbJ9vItWaleihT8ZIGR25q8tUlVp1XtsV9qk
+    token: "{{TOKEN_SUPER_ADMIN}}"
 
 settings:
   encodeUrl: true

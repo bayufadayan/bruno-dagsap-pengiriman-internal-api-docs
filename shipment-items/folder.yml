@@ -1,0 +1,7 @@
+info:
+  name: shipment-items
+  type: folder
+  seq: 13
+
+request:
+  auth: inherit

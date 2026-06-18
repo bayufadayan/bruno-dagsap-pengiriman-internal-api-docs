@@ -1,0 +1,7 @@
+info:
+  name: delivery-proofs
+  type: folder
+  seq: 15
+
+request:
+  auth: inherit

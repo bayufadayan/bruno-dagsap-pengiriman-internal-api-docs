@@ -1,0 +1,21 @@
+info:
+  name: get-by-id-delivery-proof
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BACKEND_BASE_URL}}/delivery-proofs/:box_id"
+  params:
+    - name: box_id
+      value: d1ba6b86-7f9f-41ac-a37a-2b918e0e37fb
+      type: path
+  auth:
+    type: bearer
+    token: "{{TOKEN_SUPER_ADMIN}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

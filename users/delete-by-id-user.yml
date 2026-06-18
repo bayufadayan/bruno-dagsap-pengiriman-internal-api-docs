@@ -8,11 +8,11 @@ http:
   url: "{{BACKEND_BASE_URL}}/users/:id"
   params:
     - name: id
-      value: bf44fcdc-2f63-43f1-b2a5-41dc1a6705bd
+      value: 8899ee65-aca8-4f1b-802e-5abc347caa46
       type: path
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkNTNlNTk0LTg4ODctNDVmNi05NWJkLTZkMWU4MmIyZTliZSIsImVtYWlsIjoiYWRtaW5Ac3BpZC5jb20iLCJlbXBsb3llZV9pZCI6IkRVTU1ZLTAwMSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc4MTU3NDcxOCwiZXhwIjoxNzgxNjYxMTE4fQ.ZwnLqGPAbJ9vItWaleihT8ZIGR25q8tUlVp1XtsV9qk
+    token: "{{TOKEN_SUPER_ADMIN}}"
 
 settings:
   encodeUrl: true

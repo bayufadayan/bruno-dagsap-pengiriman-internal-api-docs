@@ -8,7 +8,7 @@ http:
   url: "{{BACKEND_BASE_URL}}/users/me"
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJmNDRmY2RjLTJmNjMtNDNmMS1iMmE1LTQxZGMxYTY3MDViZCIsImVtYWlsIjpudWxsLCJlbXBsb3llZV9pZCI6IkRVTU1ZLVRFU1QwMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzgxNTczMDc0LCJleHAiOjE3ODE2NTk0NzR9.QkgQsV_yJ9qx_ekKzmEvmJZvQF_gkphGQi6DDjqkV0c
+    token: "{{TOKEN_USER}}"
 
 settings:
   encodeUrl: true

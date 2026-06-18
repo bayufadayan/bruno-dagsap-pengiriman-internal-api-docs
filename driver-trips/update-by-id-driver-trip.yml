@@ -1,0 +1,29 @@
+info:
+  name: update-by-id-driver-trip
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{BACKEND_BASE_URL}}/driver-trips/:box_id"
+  params:
+    - name: box_id
+      value: 8fa5d209-7603-4625-9cf2-f7b2c01e4a32
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "status": "departed",
+        "departed_at": "2026-06-16T08:00:00.000Z",
+        "notes": "Driver sudah berangkat"
+      }
+  auth:
+    type: bearer
+    token: "{{TOKEN_SUPER_ADMIN}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

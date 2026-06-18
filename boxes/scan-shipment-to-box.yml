@@ -1,0 +1,277 @@
+info:
+  name: scan-shipment-to-box
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{BACKEND_BASE_URL}}/boxes/:id/scan-shipment"
+  params:
+    - name: id
+      value: 7251da13-33d7-4db9-bef0-1ac563f73b3d
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "shipment_code": "SHP-20260618-001"
+      }
+  auth:
+    type: bearer
+    token: "{{TOKEN_PIC}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: scan-shipment-to-box--res
+    request:
+      url: "{{BACKEND_BASE_URL}}/boxes/:id/scan-shipment"
+      method: POST
+      params:
+        - name: id
+          value: 37261c88-14da-4fc1-ba50-f4e79468104f
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "shipment_code": "SHP-20260617-001"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: content-security-policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: strict-transport-security
+          value: max-age=31536000; includeSubDomains
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: x-xss-protection
+          value: "0"
+        - name: vary
+          value: Origin
+        - name: access-control-allow-credentials
+          value: "true"
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "5911"
+        - name: etag
+          value: W/"1717-ZLW6PQnZ3oqU8eC+ShraubPSy7k"
+        - name: date
+          value: Wed, 17 Jun 2026 08:48:01 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "success": true,
+            "message": "Shipment berhasil dimasukkan ke box",
+            "data": {
+              "action": "added_to_box",
+              "box": {
+                "id": "37261c88-14da-4fc1-ba50-f4e79468104f",
+                "code": "BOX-FAC-STL-20260617",
+                "location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                "box_date": "2026-06-17",
+                "status": "open",
+                "img_qrcode_url": "http://localhost:3000/uploads/qrcode-BOX-FAC-STL-20260617.png",
+                "locked_at": null,
+                "picked_up_at": null,
+                "completed_at": null,
+                "notes": "Box pengiriman pagi pabrik sentul",
+                "created_at": "2026-06-17T08:35:38.000Z",
+                "updated_at": "2026-06-17T08:35:38.000Z",
+                "location": {
+                  "id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                  "name": "PABRIK SENTUL",
+                  "code": "FAC-STL",
+                  "type": "factory",
+                  "address": "Leuwinutug, Jl. Olympic Raya No.Kav. H-3, Kawasan Industri, Sentul, Kec. Citeureup, Kabupaten Bogor, Jawa Barat 16810",
+                  "phone": null,
+                  "is_active": true
+                },
+                "driverTrip": null,
+                "boxShipments": [
+                  {
+                    "id": "aa5dc4fc-66b3-4e31-90a2-428a06e478ac",
+                    "box_id": "37261c88-14da-4fc1-ba50-f4e79468104f",
+                    "shipment_id": "c14f8fb6-5e24-430a-9cf3-f72345ac58d7",
+                    "added_by_id": "dfcd8d91-8040-4014-9d9b-2ea670473d16",
+                    "source": "pic_scan",
+                    "added_at": "2026-06-17T08:48:01.000Z",
+                    "removed_at": null,
+                    "created_at": "2026-06-17T08:48:01.000Z",
+                    "updated_at": "2026-06-17T08:48:01.000Z",
+                    "shipment": {
+                      "id": "c14f8fb6-5e24-430a-9cf3-f72345ac58d7",
+                      "code": "SHP-20260617-001",
+                      "sender_name": "Budi Santoso",
+                      "recipient_name": "Siti Wijaya",
+                      "origin_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                      "destination_location_id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                      "current_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                      "current_box_id": "37261c88-14da-4fc1-ba50-f4e79468104f",
+                      "current_driver_trip_id": null,
+                      "status": "ready_for_pickup",
+                      "notes": "Untuk Pabrik sentul dan di ttd",
+                      "created_at": "2026-06-17T07:32:58.000Z",
+                      "updated_at": "2026-06-17T08:48:01.000Z"
+                    },
+                    "addedBy": {
+                      "id": "dfcd8d91-8040-4014-9d9b-2ea670473d16",
+                      "employee_id": "DUMMY-006",
+                      "name": "Ali Santoso Akundummy",
+                      "email": "pic.satu@spid.com",
+                      "role": "pic",
+                      "phone": "",
+                      "position": "Staff",
+                      "default_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9"
+                    }
+                  }
+                ]
+              },
+              "shipment": {
+                "id": "c14f8fb6-5e24-430a-9cf3-f72345ac58d7",
+                "code": "SHP-20260617-001",
+                "created_by_id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+                "sender_id": "3f8eb514-0615-48fc-a370-3167c4acbf63",
+                "sender_name": "Budi Santoso",
+                "sender_phone": null,
+                "recipient_id": "d7871325-15a0-4f46-b642-dd03b3c9d894",
+                "recipient_name": "Siti Wijaya",
+                "recipient_phone": null,
+                "origin_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                "destination_location_id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                "current_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                "current_box_id": "37261c88-14da-4fc1-ba50-f4e79468104f",
+                "current_driver_trip_id": null,
+                "status": "ready_for_pickup",
+                "is_round_trip": false,
+                "parent_shipment_id": null,
+                "img_qrcode_url": "http://localhost:3000/uploads/qrcode-SHP-20260617-001.png",
+                "confirmed_at": null,
+                "completed_at": null,
+                "cancelled_at": null,
+                "notes": "Untuk Pabrik sentul dan di ttd",
+                "created_at": "2026-06-17T07:32:58.000Z",
+                "updated_at": "2026-06-17T08:48:01.000Z",
+                "originLocation": {
+                  "id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                  "name": "PABRIK SENTUL",
+                  "code": "FAC-STL",
+                  "type": "factory",
+                  "address": "Leuwinutug, Jl. Olympic Raya No.Kav. H-3, Kawasan Industri, Sentul, Kec. Citeureup, Kabupaten Bogor, Jawa Barat 16810",
+                  "phone": null,
+                  "is_active": true
+                },
+                "destinationLocation": {
+                  "id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                  "name": "GRAND WIJAYA",
+                  "code": "OFC-GWJ",
+                  "type": "office",
+                  "address": "Grand Wijaya Center, Jl. Wijaya II Blok F 83 B, RT.6/RW.1, Pulo, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160",
+                  "phone": null,
+                  "is_active": true
+                },
+                "currentLocation": {
+                  "id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                  "name": "PABRIK SENTUL",
+                  "code": "FAC-STL",
+                  "type": "factory",
+                  "address": "Leuwinutug, Jl. Olympic Raya No.Kav. H-3, Kawasan Industri, Sentul, Kec. Citeureup, Kabupaten Bogor, Jawa Barat 16810",
+                  "phone": null,
+                  "is_active": true
+                },
+                "currentBox": {
+                  "id": "37261c88-14da-4fc1-ba50-f4e79468104f",
+                  "code": "BOX-FAC-STL-20260617",
+                  "location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                  "box_date": "2026-06-17",
+                  "status": "open",
+                  "img_qrcode_url": "http://localhost:3000/uploads/qrcode-BOX-FAC-STL-20260617.png",
+                  "locked_at": null,
+                  "picked_up_at": null,
+                  "completed_at": null,
+                  "notes": "Box pengiriman pagi pabrik sentul",
+                  "created_at": "2026-06-17T08:35:38.000Z",
+                  "updated_at": "2026-06-17T08:35:38.000Z"
+                },
+                "currentDriverTrip": null
+              },
+              "box_shipment": {
+                "id": "aa5dc4fc-66b3-4e31-90a2-428a06e478ac",
+                "box_id": "37261c88-14da-4fc1-ba50-f4e79468104f",
+                "shipment_id": "c14f8fb6-5e24-430a-9cf3-f72345ac58d7",
+                "added_by_id": "dfcd8d91-8040-4014-9d9b-2ea670473d16",
+                "source": "pic_scan",
+                "added_at": "2026-06-17T08:48:01.000Z",
+                "removed_at": null,
+                "created_at": "2026-06-17T08:48:01.000Z",
+                "updated_at": "2026-06-17T08:48:01.000Z",
+                "box": {
+                  "id": "37261c88-14da-4fc1-ba50-f4e79468104f",
+                  "code": "BOX-FAC-STL-20260617",
+                  "location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                  "box_date": "2026-06-17",
+                  "status": "open",
+                  "img_qrcode_url": "http://localhost:3000/uploads/qrcode-BOX-FAC-STL-20260617.png",
+                  "locked_at": null,
+                  "picked_up_at": null,
+                  "completed_at": null,
+                  "notes": "Box pengiriman pagi pabrik sentul",
+                  "created_at": "2026-06-17T08:35:38.000Z",
+                  "updated_at": "2026-06-17T08:35:38.000Z"
+                },
+                "shipment": {
+                  "id": "c14f8fb6-5e24-430a-9cf3-f72345ac58d7",
+                  "code": "SHP-20260617-001",
+                  "sender_name": "Budi Santoso",
+                  "recipient_name": "Siti Wijaya",
+                  "origin_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                  "destination_location_id": "a603e227-cabc-4954-b55c-51326ab4fb5a",
+                  "current_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9",
+                  "current_box_id": "37261c88-14da-4fc1-ba50-f4e79468104f",
+                  "current_driver_trip_id": null,
+                  "status": "ready_for_pickup",
+                  "notes": "Untuk Pabrik sentul dan di ttd",
+                  "created_at": "2026-06-17T07:32:58.000Z",
+                  "updated_at": "2026-06-17T08:48:01.000Z"
+                },
+                "addedBy": {
+                  "id": "dfcd8d91-8040-4014-9d9b-2ea670473d16",
+                  "employee_id": "DUMMY-006",
+                  "name": "Ali Santoso Akundummy",
+                  "email": "pic.satu@spid.com",
+                  "role": "pic",
+                  "phone": "",
+                  "position": "Staff",
+                  "default_location_id": "69e16ba8-6978-470c-a660-d6e5689d5ea9"
+                }
+              }
+            }
+          }
